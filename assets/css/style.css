@@ -1,0 +1,58 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #c6ddea;
+    padding: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    height: 50px;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    max-width: 600px;
+}
+.team-logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #6a4fff;
+}
+.match-info {
+    font-size: 1rem;
+    color: gray;
+}
+.btn-bet {
+    background-color: #6a4fff;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+.btn-bet:hover {
+    background-color: #5a3eff;
+}
+
+.live-badge {
+    background-color: #ff4d4f;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+.match-details {
+    font-size: 1rem;
+    color: #ff4d4f;
+}
