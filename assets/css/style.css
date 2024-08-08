@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
 }
-header {
+header, footer {
     background-color: #c6ddea;
     padding: 20px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -35,14 +35,14 @@ header {
     color: gray;
 }
 .btn-bet {
-    background-color: #6a4fff;
+    background-color: #c6ddea !important;
     color: white;
     font-weight: bold;
     border-radius: 25px;
     padding: 10px 20px;
 }
 .btn-bet:hover {
-    background-color: #5a3eff;
+    background-color: #5a3eff !important;
 }
 
 .live-badge {
@@ -55,4 +55,9 @@ header {
 .match-details {
     font-size: 1rem;
     color: #ff4d4f;
+}
+
+.text-footer {
+    margin: 0;
+    text-align: center;
 }
