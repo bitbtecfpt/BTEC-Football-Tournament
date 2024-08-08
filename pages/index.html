@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>BTEC BIT</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="../assets/js/script.js"></script>
+    <script src="./../assets/js/script.js"></script>
 </head>
 
 <body class=" bg-light bg-gradient">
-    <div class="container text-center">
+    <div class="container text-center pt-3">
         <div class="row mb-3">
             <div class="col-6">
-                <img src="../assets/images/BIT-LogoTransparent.png" alt="Logo BIT" class="logo img-fluid image-header">
+                <img src="./../assets/images/BIT-LogoTransparent.png" alt="Logo BIT" class="logo img-fluid image-header">
             </div>
             <div class="col-1">
             </div>
             <div class="col-5">
-                <img src="../assets/images/BTEC-LogoTransparent.png" alt="Logo BTEC"
+                <img src="./../assets/images/BTEC-LogoTransparent.png" alt="Logo BTEC"
                     class="logo img-fluid image-header">
             </div>
         </div>
@@ -31,123 +31,58 @@
             </div>
         </div>
     </div>
-
-    <div class="container text-center">
-        <div class="card border-secondary ">
-            <div class="card-body">
-                <div class="row align-items-center mb-4">
-                    <div class="col-3 text-left">
-                        <span class="live-badge text-left">Live</span>
-                    </div>
-                    <div class="col-6">
-                    </div>
-                    <div class="col-3 text-right">
-                        <i class="far fa-star"></i>
-                        <i class="far fa-bell ml-2"></i>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-4 text-center team-logo">
-                        <img src="https://btec.fpt.edu.vn/wp-content/uploads/2023/04/Asset-156@4x.png" alt="Chelsea"
-                            class="logo img-fluid">
-                        <p class="fw-bold">Chelsea</p>
-                    </div>
-                    <div class="col-4 text-center">
-                        <div class="score">3 : 1</div>
-                        <div class="match-info">3 May at 17:30</div>
-                        <div class="match-info match-details">72'</div>
-                    </div>
-                    <div class="col-4 text-center team-logo">
-                        <img src="https://btec.fpt.edu.vn/wp-content/uploads/2023/04/Asset-156@4x.png" alt="LM FC"
-                            class="logo img-fluid">
-                        <p class="fw-bold">LM FC</p>
-                    </div>
-                </div>
-                <div class="row align-items-center mt-1">
-                    <div class="col-12">
-                        <p class="text-center fw-bolder">
-                            Dự đoán đội thắng: <span>LM FC</span>
-                            <br>
-                            Tổng số bàn thắng: <span> 5 </span>
-                        </p>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-3">
-                    </div>
-                    <div class="col-6">
-                        <button class="btn btn-bet btn-primary w-100" data-toggle="modal" data-target="#loginModal">Dự
-                            đoán</button>
-                    </div>
-                    <div class="col-3">
-                    </div>
-                </div>
+    <div class="container text-center pt-3">
+        <div class="row mb-3">
+            <div class="col-12">
+                <ul class="nav nav-tabs " id="round-tab" role="tablist" style="font-size: small;">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#round1"
+                            type="button" role="tab" aria-controls="round1" aria-selected="true">Vòng loại
+                            10/08</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#round2"
+                            type="button" role="tab" aria-controls="round2" aria-selected="false">Bán kết 11/08</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#round3"
+                            type="button" role="tab" aria-controls="round3" aria-selected="false">Chung kết
+                            11/08</button>
+                    </li>
+                </ul>
             </div>
         </div>
-
-        <div class="card mt-3 border-secondary">
-            <div class="card-body">
-                <div class="row align-items-center mb-4">
-                    <div class="col-3 text-left">
-                        <span class="live-badge">Live</span>
-                    </div>
-                    <div class="col-6">
-                    </div>
-                    <div class="col-3 text-right">
-                        <i class="far fa-star"></i>
-                        <i class="far fa-bell ml-2"></i>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-4 text-center team-logo">
-                        <img src="https://btec.fpt.edu.vn/wp-content/uploads/2023/04/Asset-156@4x.png" alt="Chelsea"
-                            class="logo img-fluid">
-                        <p class="fw-bold">Chelsea</p>
-                    </div>
-                    <div class="col-4 text-center">
-                        <div class="score">3 : 1</div>
-                        <div class="match-info">3 May at 17:30</div>
-                        <div class="match-info match-details">72'</div>
-                    </div>
-                    <div class="col-4 text-center team-logo">
-                        <img src="https://btec.fpt.edu.vn/wp-content/uploads/2023/04/Asset-156@4x.png" alt="LM FC"
-                            class="logo img-fluid">
-                        <p class="fw-bold">LM FC</p>
-                    </div>
-                </div>
-                <div class="row align-items-center mt-1">
-                    <div class="col-12">
-                        <p class="text-center fw-bolder">
-                            Dự đoán đội thắng: <span>LM FC</span>
-                            <br>
-                            Tổng số bàn thắng: <span> 5 </span>
-                        </p>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-3">
-                    </div>
-                    <div class="col-6">
-                        <button class="btn btn-bet btn-primary w-100" data-toggle="modal" data-target="#loginModal">Dự
-                            đoán</button>
-                    </div>
-                    <div class="col-3">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-       
-        
-
     </div>
+
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="round1" role="tabpanel" aria-labelledby="round1-tab">
+            <div class="container text-center mt-3" id="round1-tab-content">
+
+
+
+            </div>
+        </div>
+        <div class="tab-pane" id="round2" role="tabpanel" aria-labelledby="round2-tab">
+            <div class="container text-center mt-3" id="round2-tab-content">
+
+            </div>
+        </div>
+        <div class="tab-pane" id="round3" role="tabpanel" aria-labelledby="round3-tab">
+            <div class="container text-center mt-3" id="round3-tab-content">
+
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <hr>
         <div class="row align-items-center">
             <div class="col-12 text">
             </div>
-            <p class="text-footer">© 2024 BTEC IT CLUB. All Rights Reserved.</p>
-            <p class="text-footer">Powered by BIT CLUB</p>
+            <p class="text-footer">© 2024 FOOTBALL CHAMPIONSHIP. All Rights Reserved.</p>
+            <p class="text-footer">Powered by BIT IT CLUB</p>
             <p class="text-footer">Sponsored by BTEC FPT COLLEGE HANOI</p>
             <p class="text-footer">Contact us: <a
                     href="https://www.facebook.com/profile.php?id=61550777080606">Fanpage</a>
@@ -155,55 +90,109 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="loginModal">
-        <div class="modal-dialog modal-dialog-centered">
+    <!-- Modal User Register-->
+    <div class="modal fade" id="winnerPredModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
-
-                <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Dự đoán tỉ số</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title" id="exampleModalLabel">Nhập thông tin để dự đoán tỉ số</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
-                <!-- Modal body -->
                 <div class="modal-body">
-                    <form id="predictionForm" onsubmit="return handleSubmit(event)">
-                        <div class="form-group">
-                            <label for="role">Mã Nhân Viên hoặc Mã Sinh Viên</label>
-                            <select class="form-control" id="role" name="role" required>
-                                <option value="NhanVien">Nhân viên</option>
-                                <option value="SinhVien">Sinh viên</option>
-                            </select>
+                    <div class="mb-3">
+                        <label for="user-code-1" class="col-form-label">Mã sinh viên / Cán bộ:</label>
+                        <input type="text" class="form-control" id="user-code-1" placeholder="VD: BH12345, LinhHN13">
+                    </div>
+                    <div class="mb-3">
+                        <label for="user-name" class="col-form-label">Họ và tên:</label>
+                        <input type="text" class="form-control" id="user-name-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone-number-1" class="col-form-label">Số điện thoại:</label>
+                        <input type="text" class="form-control" id="phone-number-1" placeholder="VD: 0981234561">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" onclick="registerUser()">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Choosen Options-->
+    <div class="modal fade" id="optionPickerModal1" tabindex="-1" aria-labelledby="optionPickerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="optionPickerModalLabel">Bạn muốn đổi thông tin?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="user-code" class="col-form-label">Mã sinh viên / Cán bộ:</label>
+                            <input type="text" class="form-control" id="user-code" placeholder="VD: BH12345, LinhHN13">
                         </div>
-                        <div class="form-group">
-                            <label for="studentCode">Mã Sinh Viên</label>
-                            <input type="text" class="form-control" id="studentCode" name="studentCode" required>
+                        <div class="mb-3">
+                            <label for="user-name" class="col-form-label">Họ và tên:</label>
+                            <input type="text" class="form-control" id="user-name">
                         </div>
-                        <div class="form-group">
-                            <label for="fullname">Họ và Tên</label>
-                            <input type="text" class="form-control" id="fullname" name="fullname" required>
+                        <div class="mb-3">
+                            <label for="phone-number" class="col-form-label">Số điện thoại:</label>
+                            <input type="text" class="form-control" id="phone-number" placeholder="VD: 0981234561">
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Số Điện Thoại</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="winningTeam">Dự Đoán Tên Đội Thắng</label>
-                            <select class="form-control" id="winningTeam" name="winningTeam" required>
-                                <option value="Team1">Team 1</option>
-                                <option value="Team2">Team 2</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="totalGoals">Tổng Số Bàn Thắng</label>
-                            <input type="number" class="form-control" id="totalGoals" name="totalGoals" min="0"
-                                required>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style=" color: black;">DỰ ĐOÁN NGAY</button>
                     </form>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Modal Predict Score-->
+    <div class="modal fade" id="optionPickerModal" tabindex="-1" aria-labelledby="optionPickerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="optionPickerModalLabel">Dự đoán tỉ số trận đấu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="user-code-pred" class="col-form-label">Người dự đoán:</label>
+                        <div class="input-group mb-3">
+                            <input disabled type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" id="user-code-pred">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="removeUserInfo()">Đặt lại</button>
+                          </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="match-pred-name" class="col-form-label">Dự đoán trận:</label>
+                        <input disabled type="text" class="form-control" id="match-pred-name">
+                    </div>
+                    <div class="mb-3 d-none">
+                        <label for="match-pred-id" class="col-form-label">ID trận:</label>
+                        <input disabled type="text" class="form-control" id="match-pred-id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner-team-selection" class="col-form-label">Dự đoán đội thắng:</label>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="winner-team-selection">
+                            
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="total-score-input" class="col-form-label">Dự đoán tổng số bàn thắng:</label>
+                        <input type="number" class="form-control" id="total-score-input" placeholder="VD: 1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" onclick="submitWinnerPrediction()">Dự đoán</button>
+                </div>
             </div>
         </div>
     </div>

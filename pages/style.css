@@ -87,3 +87,7 @@ footer {
     flex-shrink: 0;
     /* Ensures the footer stays at the bottom */
 }
+
+.active {
+    color: #ff4d4f;
+}
