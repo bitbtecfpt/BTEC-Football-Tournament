@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>BTEC BIT</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -12,7 +14,7 @@
 
 <body>
 
-    <header class="d-flex justify-content-around align-items-center py-3">
+    <header class="d-flex justify-content-around align-items-center py-3 " style="">
         <img src="../assets/images/BIT-LogoTransparent.png" alt="Logo BIT" class="logo">
         <img src="../assets/images/BTEC-LogoTransparent.png" alt="Logo BTEC" class="logo">
     </header>
@@ -51,7 +53,7 @@
             </div>
         </div>
 
-        <button class="btn btn-bet mt-4">Place a bet</button>
+        <button class="btn btn-bet btn-primary mt-4" data-toggle="modal" data-target="#loginModal">Dự đoán</button>
 
         <hr>
 
@@ -73,7 +75,7 @@
             </div>
         </div>
 
-        <button class="btn btn-bet mt-4">Place a bet</button>
+        <button class="btn btn-primary btn-bet mt-4" data-toggle="modal" data-target="#loginModal">Dự đoán</button>
 
     </div>
 
@@ -84,9 +86,66 @@
         <p class="text-footer">Contact us: <a href="https://www.facebook.com/profile.php?id=61550777080606">Fanpage</a> | Email: bit.btecfpt@gmail.com</p>
     </footer>
 
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Dự đoán tỉ số</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="predictionForm" onsubmit="return handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="role">Mã Nhân Viên hoặc Mã Sinh Viên</label>
+                            <select class="form-control" id="role" name="role" required>
+                                <option value="NhanVien">Nhân viên</option>
+                                <option value="SinhVien">Sinh viên</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentCode">Mã Sinh Viên</label>
+                            <input type="text" class="form-control" id="studentCode" name="studentCode" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fullname">Họ và Tên</label>
+                            <input type="text" class="form-control" id="fullname" name="fullname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số Điện Thoại</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="winningTeam">Dự Đoán Tên Đội Thắng</label>
+                            <select class="form-control" id="winningTeam" name="winningTeam" required>
+                                <option value="Team1">Team 1</option>
+                                <option value="Team2">Team 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="totalGoals">Tổng Số Bàn Thắng</label>
+                            <input type="number" class="form-control" id="totalGoals" name="totalGoals" min="0" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style=" color: black;">DỰ ĐOÁN NGAY</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
