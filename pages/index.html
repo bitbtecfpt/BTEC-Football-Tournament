@@ -75,17 +75,33 @@
         </div>
         <div class="tab-pane" id="result" role="tabpanel" aria-labelledby="result-tab">
             <div class="container text-center mt-3" id="result-tab-content">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Điểm số dự đoán</th>
-                            <th scope="col">Thời gian</th>
-                        </tr>
-                    </thead>
-                    <tbody id="body-table-prediction-result">
-                    </tbody>
-                </table>
+                <div class="row">
+                    <div class="col-12 text-">
+                        <small class="text-start fst-italic">Quy tắc tính điểm:
+                            <ul>
+                                <li>Dự đoán đúng đội thắng: +700 điểm.</li>
+                                <li>Dự đoán đúng tổng bàn thắng: +1000 điểm.</li>
+                                <li>Nếu tổng điểm bằng nhau sẽ tính theo người dự đoán đầu tiên.</li>
+                            </ul>
+                        </small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Điểm số</th>
+                                    <th scope="col">Thời gian</th>
+                                </tr>
+                            </thead>
+                            <tbody id="body-table-prediction-result">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
                 <i>Hiện chưa bắt đầu ghi nhận kết quả</i>
             </div>
         </div>
