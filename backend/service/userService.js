@@ -6,31 +6,30 @@ const user = function (user) {
     this.phone_number = user.phone_number;
 };
 
-user.create = (newUser, result) => {
+user.create = (user, result) => {
     // Check if phone_number already exists
     try{
-        sql.query("SELECT * FROM users WHERE phone_number = ?", [newUser.phone_number], (err, res) => {
+        sql.query("SELECT * FROM users WHERE phone_number = ? OR user_code = ?",
+            [user.phone_number, user.user_code], (err, res) => {
+                if (err || res.length) {
+                    if (err) {
+                        console.log("error: ", err);
+                        result(err, null);
+                    } else {
+                        result({ kind: "phone_number_or_user_code_exists" }, null);
+                    }
+                    process.exit(1);
+                }
+            });
+        sql.query("INSERT INTO users SET ?", user, (err, res) => {
             if (err) {
                 console.log("error: ", err);
                 result(err, null);
-                return;
+                process.exit(1);
             }
 
-            if (res.length) {
-                // Phone number already exists
-                result({kind: "phone_number_exists"}, null);
-                return;
-            }
-        });
-        sql.query("INSERT INTO users SET ?", newUser, (err, res) => {
-            if (err) {
-                console.log("error: ", err);
-                result(err, null);
-                return;
-            }
-
-            console.log("created user: ", {id: res.insertId, ...newUser});
-            result(null, {id: res.insertId, ...newUser});
+            console.log("created user: ", {id: res.insertId, ...user});
+            result(null, {id: res.insertId, ...user});
         });
     }catch (e) {
         console.error('Error:', e);

@@ -7,7 +7,7 @@ let viewAllMatches = async (req, res) => {
             if (err)
                 res.status(500).send({
                     message:
-                        err.message || "Some error occurred while retrieving tutorials."
+                        err.message || "Some error occurred while retrieving matches."
                 });
             else res.send(data);
         });

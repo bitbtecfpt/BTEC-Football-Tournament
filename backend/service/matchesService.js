@@ -8,8 +8,6 @@ const matches = function (match) {
     this.team_b = match.team_b;
     this.score_team_a = match.score_team_a;
     this.score_team_b = match.score_team_b;
-    this.created_at = match.created_at;
-    this.updated_at = match.updated_at;
 };
 
 matches.create = (newMatch, result) => {

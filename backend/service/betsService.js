@@ -12,11 +12,11 @@ bets.create = (newbet, result) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
-            return;
+            process.exit(1);
         }
 
-        console.log("created bet: ", {id: res.insertId, ...newbet});
-        result(null, {id: res.insertId, ...newbet});
+        console.log("created user: ", { id: res.insertId, ...newbet });
+        result(null, { id: res.insertId, ...newbet });
     });
 }
 
