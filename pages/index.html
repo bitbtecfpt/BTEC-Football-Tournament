@@ -33,7 +33,7 @@
     <div class="container text-center pt-3">
         <div class="row mb-3">
             <div class="col-12">
-                <ul class="nav nav-tabs " id="round-tab" role="tablist" style="font-size: small;">
+                <ul class="nav nav-tabs " id="round-tab" role="tablist" style="font-size: smaller;">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#round1"
                             type="button" role="tab" aria-controls="round1" aria-selected="true">Vòng bảng
@@ -48,6 +48,11 @@
                             type="button" role="tab" aria-controls="round3" aria-selected="false">Chung kết
                             11/08</button>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#result"
+                            type="button" role="tab" aria-controls="result" aria-selected="false">Kết quả dự
+                            đoán</button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -58,19 +63,30 @@
     <div class="tab-content">
         <div class="tab-pane active" id="round1" role="tabpanel" aria-labelledby="round1-tab">
             <div class="container text-center mt-3" id="round1-tab-content">
-
-
-
             </div>
         </div>
         <div class="tab-pane" id="round2" role="tabpanel" aria-labelledby="round2-tab">
             <div class="container text-center mt-3" id="round2-tab-content">
-
             </div>
         </div>
         <div class="tab-pane" id="round3" role="tabpanel" aria-labelledby="round3-tab">
             <div class="container text-center mt-3" id="round3-tab-content">
-
+            </div>
+        </div>
+        <div class="tab-pane" id="result" role="tabpanel" aria-labelledby="result-tab">
+            <div class="container text-center mt-3" id="result-tab-content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Điểm số dự đoán</th>
+                            <th scope="col">Thời gian</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body-table-prediction-result">
+                    </tbody>
+                </table>
+                <i>Hiện chưa bắt đầu ghi nhận kết quả</i>
             </div>
         </div>
     </div>

@@ -22,6 +22,20 @@ function handleSubmit(event) {
     `;
 }
 
+function templatePredictionResultHTML(data) {
+    let newRow = document.createElement('tr');
+    newRow.innerHTML = `
+            <th scope="row">${data.place}</th>
+            <td>${data.score}</td>
+            <td>${data.time}</td>
+        `;
+    return newRow;
+}
+/**
+ * 
+ * @param {object} data 
+ * @returns 
+ */
 function templateMatchPanelHTML(data) {
     return `
                 <div class="card border-secondary mt-2">
@@ -323,7 +337,36 @@ function getMatches() {
             html_round_tab_3.innerHTML += html;
         }
     });
+
+    let html_prediction_result = document.getElementById('body-table-prediction-result');
+    let dummyData2 = [
+        {
+            place: 1,
+            score: 5400,
+            time: '2024-08-10 07:30'
+        },
+        {
+            place: 2,
+            score: 5200,
+            time: '2024-08-10 07:30'
+        },
+        {
+            place: 3,
+            score: 5000,
+            time: '2024-08-10 07:30'
+        },
+        {
+            place: 4,
+            score: 5000,
+            time: '2024-08-11 07:30'
+        },
+    ];
+    dummyData2.forEach(data => {
+        let html = templatePredictionResultHTML(data);
+        html_prediction_result.appendChild(html);
+    });
 }
+
 /**
  * Lưu dự đoán của người dùng
  */
