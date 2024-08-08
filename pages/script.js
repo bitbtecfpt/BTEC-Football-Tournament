@@ -185,7 +185,7 @@ function getMatches() {
         {
             id: 3,
             round: 1,
-            start_time: "2024-08-10 07:30:00",
+            start_time: "2024-08-10 07:30",
             end_time: null,
             team_a: "MELBOURNE FC",
             team_a_id: 1,
@@ -199,7 +199,7 @@ function getMatches() {
         {
             id: 2,
             round: 1,
-            start_time: "2024-08-10 07:30:00",
+            start_time: "2024-08-10 07:30",
             end_time: null,
             team_a: "APPLE STORE FC",
             team_a_id: 3,
@@ -213,7 +213,7 @@ function getMatches() {
         {
             id: 3,
             round: 1,
-            start_time: "2024-08-10 09:45:00",
+            start_time: "2024-08-10 09:45",
             end_time: null,
             team_a: "TT & AE FC",
             team_a_id: 2,
@@ -227,7 +227,7 @@ function getMatches() {
         {
             id: 4,
             round: 1,
-            start_time: "2024-08-10 09:45:00",
+            start_time: "2024-08-10 09:45",
             end_time: null,
             team_a: "APPLE STORE FC",
             team_a_id: 3,
@@ -241,7 +241,7 @@ function getMatches() {
         {
             id: 5,
             round: 1,
-            start_time: "2024-08-10 14:00:00",
+            start_time: "2024-08-10 14:00",
             end_time: null,
             team_a: "MELBOURNE FC",
             team_a_id: 1,
@@ -255,7 +255,7 @@ function getMatches() {
         {
             id: 6,
             round: 1,
-            start_time: "2024-08-10 14:00:00",
+            start_time: "2024-08-10 14:00",
             end_time: null,
             team_a: "STORM FC",
             team_a_id: 5,
@@ -269,7 +269,7 @@ function getMatches() {
         {
             id: 7,
             round: 2,
-            start_time: "2024-08-11 08:30:00",
+            start_time: "2024-08-11 08:30",
             end_time: 0,
             team_a: "TBD",
             team_a_id: 0,
@@ -283,7 +283,7 @@ function getMatches() {
         {
             id: 8,
             round: 3,
-            start_time: "2024-08-11 14:00:00",
+            start_time: "2024-08-11 14:00",
             end_time: 0,
             team_a: "TBD",
             team_a_id: 0,
@@ -297,7 +297,7 @@ function getMatches() {
         {
             id: 9,
             round: 3,
-            start_time: "2024-08-11 15:30:00",
+            start_time: "2024-08-11 15:30",
             end_time: 0,
             team_a: "TBD",
             team_a_id: 0,
