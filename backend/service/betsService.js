@@ -6,31 +6,42 @@ const bets = function (bet) {
     this.match_id = bet.match_id;
     this.winner_pred = bet.winner_pred;
 };
-
-bets.create = (newbet, result) => {
-    sql.query("INSERT INTO bets SET ?", newbet, (err, res) => {
-        if (err) {
-            console.log("error: ", err);
-            result(err, null);
-            process.exit(1);
+try {
+    bets.create = (newbet, result) => {
+        try{
+            sql.query("INSERT INTO bets SET ?", newbet, (err, res) => {
+                if (err) {
+                    console.log("error: ", err);
+                    result(err, null);
+                }
+                console.log("created bet: ", res);
+                return result(null, res);
+            });
+        }catch (e) {
+            console.error('Error:', e);
         }
 
-        console.log("created user: ", { id: res.insertId, ...newbet });
-        result(null, { id: res.insertId, ...newbet });
-    });
-}
+    }
 
-bets.view = (result) => {
-    sql.query("SELECT * FROM bets", (err, res) => {
-        if (err) {
-            console.log("error: ", err);
-            result(null, err);
-            return;
+    bets.view = (result) => {
+        try {
+            sql.query("SELECT * FROM bets", (err, res) => {
+                if (err) {
+                    console.log("error: ", err);
+                    return result(null, err);
+                }
+
+                console.log("bet: ", res);
+                return result(null, res);
+            });
         }
+        catch (e) {
+            console.error('Error:', e);
+        }
+    }
 
-        console.log("bet: ", res);
-        result(null, res);
-    });
+    module.exports = bets;
 }
-
-module.exports = bets;
+catch (e) {
+    console.error('Error:', e);
+}

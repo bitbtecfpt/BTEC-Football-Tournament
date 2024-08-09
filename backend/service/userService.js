@@ -20,12 +20,14 @@ user.create = (user, result) => {
                             sql.query(`UPDATE users SET user_code = ?, user_name = ? WHERE phone_number = ?`, [user.user_code, user.user_name, user.phone_number], (err, res) => {
                                 if (err) {
                                     console.log("error: ", err);
+                                    return result(err, null);
                                 }
                             });
 
                             sql.query(`UPDATE users SET phone_number = ?, user_name = ? WHERE user_code = ?`, [user.phone_number, user.user_name, user.user_code], (err, res) => {
                                 if (err) {
                                     console.log("error: ", err);
+                                    return result(err, null);
                                 }
                             });
                         }
@@ -44,7 +46,6 @@ user.create = (user, result) => {
                         if (err) {
                             console.log("error: ", err);
                             result(err, null);
-                            process.exit(1);
                         }
                         sql.query("SELECT * FROM users WHERE phone_number = ? OR user_code = ?", [user.phone_number, user.user_code], (err, res) => {
                             if (err) {
@@ -55,7 +56,7 @@ user.create = (user, result) => {
                             }
                         });
                     });
-                };
+                }
             });
 
     } catch (e) {

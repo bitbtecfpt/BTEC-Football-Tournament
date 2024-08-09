@@ -17,7 +17,6 @@ app.use(cors(corsOptions));
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({ extended: true }));
 
-// app.get('/', controller.helloWorld);
 app.post('/info', userController.addUser);
 app.get('/matches', matchesController.viewAllMatches);
 app.get('/info', userController.infoUser);

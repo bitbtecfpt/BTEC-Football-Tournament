@@ -75,7 +75,6 @@ let infoUser = async (req, res) => {
 };
 
 module.exports = {
-    //getHomepage,
     addUser,
     infoUser,
 };
