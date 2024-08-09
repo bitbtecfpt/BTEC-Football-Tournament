@@ -1,6 +1,6 @@
 const model = require('../service/betsService.js');
 
-let viewAllBets = async (req, res) => {
+let getBets = async (req, res) => {
     try {
         model.view((err, data) => {
             if (err)
@@ -48,6 +48,6 @@ let addBet = async (req, res) => {
 }
 
 module.exports = {
-    viewAllBets,
+    getBets,
     addBet,
 };
