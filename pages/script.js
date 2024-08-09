@@ -260,7 +260,7 @@ function getMatches() {
             team_b: "LEGION OF MIGHT FC",
             team_b_id: 3,
             score_team_a: '-',
-            score_team_b: 0,
+            score_team_b: '-',
             winner_pred: '-',
             total_score: '-'
         },
@@ -287,8 +287,8 @@ function getMatches() {
             team_a_id: 0,
             team_b: "TBD",
             team_b_id: 0,
-            score_team_a: 0,
-            score_team_b: 0,
+            score_team_a: '-',
+            score_team_b: '-',
             winner_pred: '-',
             total_score: '-'
         },
@@ -301,8 +301,8 @@ function getMatches() {
             team_a_id: 0,
             team_b: "TBD",
             team_b_id: 0,
-            score_team_a: 0,
-            score_team_b: 0,
+            score_team_a: '-',
+            score_team_b: '-',
             winner_pred: '-',
             total_score: '-'
         },
@@ -315,8 +315,8 @@ function getMatches() {
             team_a_id: 0,
             team_b: "TBD",
             team_b_id: 0,
-            score_team_a: 0,
-            score_team_b: 0,
+            score_team_a: '-',
+            score_team_b: '-',
             winner_pred: '-',
             total_score: '-'
         }
