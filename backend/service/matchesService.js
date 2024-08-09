@@ -35,12 +35,12 @@ try {
             sql.query(`
         SELECT matches.*, teams_a.name as team_a, teams_b.name as team_b, 
         matches.team_a as team_a_id, matches.team_b as team_b_id, DATE_FORMAT(matches.start_time,"%H:%i %d/%m/%Y") as start_time
-        ${user_id ? `, bets.winner_pred, bets.total_score` : ''}
+        ${(user_id !== null && user_id !== undefined && user_id !== 'undefined')? `, bets.winner_pred, bets.total_score` : ''}
         
         FROM matches 
         LEFT join teams as teams_a on teams_a.id = matches.team_a
         LEFT join teams as teams_b on teams_b.id = matches.team_b  
-        ${user_id ? `LEFT JOIN bets ON bets.match_id = matches.id AND bets.user_id = ${user_id}` : ''}
+        ${(user_id !== null && user_id !== undefined && user_id !== 'undefined') ? `LEFT JOIN bets ON bets.match_id = matches.id AND bets.user_id = ${user_id}` : ''}
         WHERE matches.team_a <> 7
         ORDER BY matches.id ASC
         `, (err, res) => {
