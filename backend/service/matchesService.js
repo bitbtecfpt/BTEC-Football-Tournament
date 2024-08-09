@@ -35,3 +35,5 @@ matches.view = (result) => {
         result(null, res);
     });
 }
+
+module.exports = matches;
