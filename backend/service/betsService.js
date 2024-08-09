@@ -100,7 +100,7 @@ try {
                 //lặp qua từng dòng dữ liệu trong dataBets
                 let allPoint = categoryPoint(dataBets);
 
-                return result(null, groupBetData(allPoint));
+                return result(null, {data:groupBetData(allPoint)});
             });
         } catch (e) {
             console.error('Error:', e);
