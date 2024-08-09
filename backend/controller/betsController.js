@@ -8,7 +8,11 @@ let viewAllBets = async (req, res) => {
                     message:
                         err.message || "Some error occurred while retrieving bets."
                 });
-            else res.send(data);
+            else {
+                console.log(data);
+                res.send(data);
+            } 
+            
         });
     } catch (e) {
         console.error('Error:', e);
@@ -23,14 +27,12 @@ let addBet = async (req, res) => {
                 message: "Content can not be empty!"
             });
         }
-
         const bet = {
-            round: req.body.round,
             user_id: req.body.user_id,
             match_id: req.body.match_id,
-            winner_pred: req.body.winner_pred
+            winner_pred: req.body.winner_pred,
+            total_score: req.body.total_score
         };
-
         model.create(bet, (err, data) => {
             if (err)
                 res.status(500).send({

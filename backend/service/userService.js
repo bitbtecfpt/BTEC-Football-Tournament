@@ -8,7 +8,7 @@ const user = function (user) {
 
 user.create = (user, result) => {
     // Check if phone_number already exists
-    try{
+    try {
         sql.query("SELECT * FROM users WHERE phone_number = ? OR user_code = ?",
             [user.phone_number, user.user_code], (err, res) => {
                 if (err || res.length) {
@@ -16,37 +16,62 @@ user.create = (user, result) => {
                         console.log("error: ", err);
                         result(err, null);
                     } else {
-                        result({ kind: "phone_number_or_user_code_exists" }, null);
-                    }
-                    process.exit(1);
-                }
-            });
-        sql.query("INSERT INTO users SET ?", user, (err, res) => {
-            if (err) {
-                console.log("error: ", err);
-                result(err, null);
-                process.exit(1);
-            }
+                        if (res[0].phone_number === user.phone_number && res[0].user_code === user.user_code) {
+                            sql.query(`UPDATE users SET user_code = ?, user_name = ? WHERE phone_number = ?`, [user.user_code, user.user_name, user.phone_number], (err, res) => {
+                                if (err) {
+                                    console.log("error: ", err);
+                                }
+                            });
 
-            console.log("created user: ", {id: res.insertId, ...user});
-            result(null, {id: res.insertId, ...user});
-        });
-    }catch (e) {
+                            sql.query(`UPDATE users SET phone_number = ?, user_name = ? WHERE user_code = ?`, [user.phone_number, user.user_name, user.user_code], (err, res) => {
+                                if (err) {
+                                    console.log("error: ", err);
+                                }
+                            });
+                        }
+                        sql.query("SELECT * FROM users WHERE phone_number = ? OR user_code = ?", [user.phone_number, user.user_code], (err, res) => {
+                            if (err) {
+                                console.log("error: ", err);
+                                result(err, null);
+                            } else {
+                                result(null, res);
+                            }
+                        });
+                    }
+
+                } else {
+                    sql.query("INSERT INTO users SET ?", user, (err, res) => {
+                        if (err) {
+                            console.log("error: ", err);
+                            result(err, null);
+                            process.exit(1);
+                        }
+                        sql.query("SELECT * FROM users WHERE phone_number = ? OR user_code = ?", [user.phone_number, user.user_code], (err, res) => {
+                            if (err) {
+                                console.log("error: ", err);
+                                result(err, null);
+                            } else {
+                                result(null, res);
+                            }
+                        });
+                    });
+                };
+            });
+
+    } catch (e) {
         console.error('Error:', e);
-        return res.send('Oops! Something went wrong, check logs console for detail...');
+        return result('Có lỗi xảy ra', null);
     }
 
 }
 
-user.view = (result) => {
-    sql.query("SELECT * FROM users", (err, res) => {
+user.view = (user_code, result) => {
+    sql.query(`SELECT * FROM users WHERE user_code = '${user_code}'`, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
             return;
         }
-
-        console.log("user: ", res);
         result(null, res);
     });
 }
