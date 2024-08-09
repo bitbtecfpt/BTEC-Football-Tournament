@@ -4,13 +4,13 @@ let viewAllBets = async (req, res) => {
     try {
         model.view((err, data) => {
             if (err)
-                res.status(500).send({
+                return res.status(500).send({
                     message:
                         err.message || "Some error occurred while retrieving bets."
                 });
             else {
                 console.log(data);
-                res.send(data);
+                return res.send(data);
             } 
             
         });
@@ -23,7 +23,7 @@ let viewAllBets = async (req, res) => {
 let addBet = async (req, res) => {
     try {
         if (!req.body) {
-            res.status(400).send({
+            return res.status(400).send({
                 message: "Content can not be empty!"
             });
         }
@@ -35,11 +35,11 @@ let addBet = async (req, res) => {
         };
         model.create(bet, (err, data) => {
             if (err)
-                res.status(500).send({
+                return res.status(500).send({
                     message:
                         err.message || "Some error occurred while creating the bet."
                 });
-            else res.send(data);
+            else return res.send(data);
         });
     } catch (e) {
         console.error('Error:', e);

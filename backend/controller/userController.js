@@ -5,7 +5,7 @@ const e = require('express');
 let addUser = async (req, res) => {
     try {
         if (!req.body) {
-            res.status(400).send({
+            return res.status(400).send({
                 message: "Content can not be empty!"
             });
         }
@@ -23,7 +23,7 @@ let addUser = async (req, res) => {
                 res.status(500).send({
                     data: null,
                     message:
-                        err.message || "Some error occurred while creating the user. " + err
+                        err.message || "Some error occurred while creating the user: " + err
                 });
             else {return res.send({
                 message: 'Thêm user thành công',
@@ -39,8 +39,9 @@ let addUser = async (req, res) => {
 let infoUser = async (req, res) => {
     try {
         let user_code = req.query.user_code || req.params.user_code;
-        if (!user_code || user_code === '' || user_code === 'undefined' || user_code === 'null' || user_code === null || user_code === undefined) {
-            res.status(400).send({
+        if (!user_code || user_code === '' || user_code === 'undefined' ||
+            user_code === 'null' || user_code === null || user_code === undefined) {
+            return res.status(400).send({
                 message: "Content can not be empty!"
             });
         }

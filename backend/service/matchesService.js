@@ -14,9 +14,13 @@ try {
         try {
             sql.query("INSERT INTO matches SET ?", newMatch, (err, res) => {
                 if (err) {
+
+                    // trả ra error
                     console.log("error: ", err);
                     return result(err, null);
                 }
+
+                // trả ra response
                 console.log("created match: ", res);
                 return result(null,res);
             });
@@ -41,10 +45,13 @@ try {
         ORDER BY matches.id ASC
         `, (err, res) => {
                 if (err) {
+
+                    // trả ra error
                     console.log("error: ", err);
-                    return result(null, err);
+                    return result(err, null);
                 }
 
+                // trả ra response
                 console.log("match: ", res);
                 return result(null, res);
             });

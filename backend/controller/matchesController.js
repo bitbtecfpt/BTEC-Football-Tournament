@@ -6,11 +6,11 @@ let viewAllMatches = async (req, res) => {
         let user_id = req.query.user_id || req.params.user_id;
         model.view(user_id, (err, data) => {
             if (err)
-                res.status(500).send({
+                return res.status(500).send({
                     message:
                         err.message || "Some error occurred while retrieving matches."
                 });
-            else res.send(data);
+            else return res.send(data);
         });
     } catch (e) {
         console.error('Error:');
