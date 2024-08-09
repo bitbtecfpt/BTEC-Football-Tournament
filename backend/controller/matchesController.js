@@ -3,7 +3,8 @@ const model = require('../service/matchesService.js');
 
 let viewAllMatches = async (req, res) => {
     try {
-        model.view((err, data) => {
+        let user_id = req.query.user_id || req.params.user_id;
+        model.view(user_id, (err, data) => {
             if (err)
                 res.status(500).send({
                     message:
@@ -12,7 +13,7 @@ let viewAllMatches = async (req, res) => {
             else res.send(data);
         });
     } catch (e) {
-        console.error('Error:', e);
+        console.error('Error:');
         return res.send('Oops! Something went wrong, check logs console for detail...');
     }
 }
