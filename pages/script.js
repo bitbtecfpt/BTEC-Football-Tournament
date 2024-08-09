@@ -41,14 +41,14 @@ function templateMatchPanelHTML(data) {
                 <div class="card border-secondary mt-2">
                     <div class="card-body">
                         <div class="row align-items-center mb-4">
-                            <div class="col-4 text-left">
-                                <span class="live-badge text-left" style="font-size: small;"> 
+                            <div class="col-6 text-start">
+                                <span class="live-badge text-start" style="font-size: small;"> 
                                  ${data.isLive ? 'Live' : 'Comming'}
                                 </span>
                             </div>
-                            <div class="col-5">
+                            <div class="col-3">
                             </div>
-                            <div class="col-3 text-right">
+                            <div class="col-3 text-end">
                                 <i class="far fa-star"></i>
                                 <i class="far fa-bell ml-2"></i>
                             </div>
