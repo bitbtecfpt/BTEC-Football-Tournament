@@ -38,14 +38,14 @@ function groupBetData(allPoints) {
         if (!result[user_code]) {
             result[user_code] = {
                 user_code: user_code,
-                total_score: 0,
+                point: 0,
                 total_index: 0,
                 count: 0
             };
         }
 
         // Cộng dồn score, index và tăng số lượng
-        result[user_code].total_score += point;
+        result[user_code].point += point;
         result[user_code].total_index += index;
         result[user_code].count += 1;
     });
@@ -53,7 +53,7 @@ function groupBetData(allPoints) {
     // Tạo mảng mới với các đối tượng có user_code duy nhất
     let arrayData =  Object.values(result).map(item => ({
         user_code: item.user_code,
-        total_score: item.total_score,
+        point: item.point,
         average_index: item.total_index / item.count
     }));
     return sortByScoreAndIndex(arrayData);
@@ -105,8 +105,8 @@ function calculateScore(result, winner_pred, total_score) {
 function sortByScoreAndIndex(points) {
     return points.sort((a, b) => {
         // Sắp xếp theo total_score trước
-        if (a.total_score !== b.total_score) {
-            return b.total_score - a.total_score;
+        if (a.point !== b.point) {
+            return b.point - a.point;
         }
         // Nếu total_score bằng nhau, sắp xếp theo average_index
         return b.average_index - a.average_index;
